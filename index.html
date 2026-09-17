@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="#122c2a">
+        <meta name="description" content="Интерактивный лимонный комплекс Recycle Community по рисунку и рассказу Димы.">
+        <title>Recycle Community — мир Димы</title>
+        <script type="module" crossorigin src="/assets/index-DxVdWvRb.js"></script>
+        <link rel="modulepreload" crossorigin href="/assets/BufferGeometryUtils-CZ6UOjC4.js">
+        <link rel="stylesheet" crossorigin href="/assets/index-Cmc548xV.css">
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <a class="brand" href="#" aria-label="Recycle Community, общий вид">
+                    <span class="brand-mark">RC</span>
+                    <span>
+                        RECYCLE<br>
+                        <b>COMMUNITY</b>
+                    </span>
+                </a>
+                <nav id="modes" aria-label="Режим обзора">
+                    <button data-mode="exterior">Снаружи</button>
+                    <button data-mode="cutaway">Разрез</button>
+                    <button data-mode="xray">Рентген</button>
+                    <button data-mode="interior">Помещения</button>
+                    <button data-mode="process">Процессы</button>
+                </nav>
+                <span class="credit">
+                    Мир, придуманный Димой<span>ИНТЕРАКТИВНАЯ ДИОРАМА</span>
+                </span>
+            </header>
+            <main>
+                <div id="canvas-host" aria-label="Трёхмерная модель комплекса" tabindex="0"></div>
+                <section class="intro">
+                    <p class="eyebrow">01 / ЖИВОЙ ЛИМОН</p>
+                    <h1>
+                        Всё получает<br>новую жизнь.
+                    </h1>
+                    <p>
+                        Откройте разрез,<br>чтобы заглянуть внутрь.
+                    </p>
+                </section>
+                <aside id="explorer">
+                    <label for="zone">Исследовать комплекс</label>
+                    <select id="zone">
+                        <option value="">Выберите зону…</option>
+                    </select>
+                    <label for="camera">Ракурс</label>
+                    <select id="camera">
+                        <option value="Exterior">Внешний вид</option>
+                        <option value="Arrival">Подъезд</option>
+                        <option value="Cutaway">Общий разрез</option>
+                        <option value="Mountain View">Лес и кордильеры</option>
+                    </select>
+                    <div id="process-panel" hidden>
+                        <label for="process">Маршрут</label>
+                        <select id="process">
+                            <option value="paper">Бумага → новая бумага</option>
+                            <option value="plastic">Пластик → новые вещи</option>
+                            <option value="air">Очистка воздуха</option>
+                            <option value="elevator">Лифт по этажам</option>
+                            <option value="transport">Машины и вертолёты</option>
+                        </select>
+                    </div>
+                    <div class="legend">
+                        <span>
+                            <i style="--c:#edc937"></i>
+                            Бумага
+                        </span>
+                        <span>
+                            <i style="--c:#d64c3b"></i>
+                            Пластик
+                        </span>
+                        <span>
+                            <i style="--c:#54babb"></i>
+                            Воздух
+                        </span>
+                    </div>
+                    <details>
+                        <summary>Двигать комплекс</summary>
+                        <div class="row">
+                            <button id="move">Переместить</button>
+                            <button id="rotate">Повернуть</button>
+                        </div>
+                        <button id="reset-transform">Вернуть на место</button>
+                        <p>Потяните за оси в сцене. Esc — убрать оси.</p>
+                    </details>
+                </aside>
+                <article id="card" hidden>
+                    <button id="close-card" aria-label="Закрыть описание">×</button>
+                    <p class="eyebrow" id="card-type"></p>
+                    <h2 id="card-title"></h2>
+                    <p id="card-description"></p>
+                    <div class="fact-tag" id="card-fact"></div>
+                    <div id="elevator-panel" hidden>
+                        <label for="level">Остановка лифта</label>
+                        <select id="level"></select>
+                        <output id="floor-now"></output>
+                    </div>
+                    <button id="focus">Рассмотреть ближе</button>
+                </article>
+                <div id="loading" role="status">Загружаем лимонный комплекс…</div>
+                <div class="camera-help">Вращать — мышью · приближать — колёсиком · сдвигать — правой кнопкой</div>
+                <div id="metrics" aria-label="Производительность"></div>
+            </main>
+            <footer>
+                <button id="play" class="primary" aria-label="Запустить анимацию">▶ Запустить</button>
+                <button id="restart" aria-label="Сначала">↺</button>
+                <input id="timeline" type="range" min="0" max="24" step="0.01" value="0" aria-label="Время анимации">
+                <output id="time">00:00 / 00:24</output>
+                <select id="speed" aria-label="Скорость анимации">
+                    <option value="0.5">0,5×</option>
+                    <option value="1" selected>1×</option>
+                    <option value="2">2×</option>
+                </select>
+                <label class="motion">
+                    <input id="reduced" type="checkbox">Меньше движения
+                </label>
+                <label class="motion">
+                    <input id="flights" type="checkbox" checked>Полёты
+                </label>
+            </footer>
+        </div>
+    </body>
+</html>
